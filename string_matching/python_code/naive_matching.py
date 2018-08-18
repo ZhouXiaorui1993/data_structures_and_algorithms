@@ -9,6 +9,7 @@
 算法时间复杂度：O(m×n)
 """
 
+
 def naive_matching(target_str, pattern_str):
     m, n = len(target_str), len(pattern_str)
     i, j = 0, 0
@@ -23,6 +24,7 @@ def naive_matching(target_str, pattern_str):
     if j==n:
         return i-j  # 返回起始字符的索引
     return -1  # 无匹配，返回-1
+
 
 if __name__ == "__main__":
     print(naive_matching("nice to meet you, lj", "meet"))
