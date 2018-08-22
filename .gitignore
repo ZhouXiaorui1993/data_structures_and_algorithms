@@ -36,3 +36,6 @@
 
 # win
 .idea/
+
+# python
+*.pyc
