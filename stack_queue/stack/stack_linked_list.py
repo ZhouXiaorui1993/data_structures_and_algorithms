@@ -6,16 +6,19 @@
 此时栈顶为链表首端元素
 """
 
+
 # 定义自己的异常
 class StackUnderFlow(ValueError):
     # 继承ValueError类
     pass
+
 
 # 定义节点类
 class LNode(object):
     def __init__(self, elem, next_=None):
         self.elem = elem  # 数据域
         self.next = next_  # 指向下一个节点
+
 
 class LinkedStack(object):
     def __init__(self):
