@@ -36,6 +36,7 @@
 
 # win
 .idea/
+.DS_Store
 
 # python
 *.pyc
