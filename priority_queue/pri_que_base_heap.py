@@ -107,6 +107,7 @@ class PriorityQueue(object):
         self._elems[current_index] = elem
 
     def print_all(self):
+        # 打印堆中的数据
         print(self._elems)
 
 
