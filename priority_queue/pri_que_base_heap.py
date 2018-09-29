@@ -54,8 +54,8 @@ class PriorityQueue(object):
         """将无序列表建成一个堆"""
         # 从右下结点开始，利用下沉方法，向左一个个建堆；
         # 然后再到上一层建堆（相当于给每两个子堆新增了堆顶，通过逐层下沉的方式构建新的大堆），直至整个表建成一个完整的堆
-        end = len(self._elems)
-        for i in range(end//2, -1, -1):
+        end = len(self._elems)-1
+        for i in range((end+1)//2, -1, -1):
             self.shift_down(self._elems[i], i, end)
 
     def shift_up(self, elem, last):
@@ -91,7 +91,7 @@ class PriorityQueue(object):
             current_left = current_son
             current_right = current_left+1  # 右子结点的索引
             # 如果右结点存在且右结点较小
-            if current_right < end and self._elems[current_left] > self._elems[current_right]:
+            if current_right <= end and self._elems[current_left] > self._elems[current_right]:
                 current_son = current_right
             # 再将较小的子结点和elem比较
             # 如果elem较小，则可以退出循环了
@@ -112,7 +112,7 @@ class PriorityQueue(object):
 
 
 if __name__ == '__main__':
-    test_pri_queue = PriorityQueue([1,4,6,2,3,5,0,7])
+    test_pri_queue = PriorityQueue([1,4,6,2,3,5,0,7,-1])
     test_pri_queue.build_heap()
     test_pri_queue.print_all()
 
